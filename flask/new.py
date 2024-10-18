@@ -1,18 +1,27 @@
-from flask import Flask,render_template
+from flask import Flask, render_template,request
 
-app=Flask(__name__)
+app = Flask(__name__)
 
 
-@app.route('/')
+@app.route("/home")
 def home():
-    return render_template('index.html')
+    return render_template("home.html")
 
-@app.route('/login')
+
+@app.route("/")
 def login():
-    return render_template('login.html')
-@app.route('/register')
-def register():
-    return render_template('register.html')
+    return render_template("login.html")
 
-if __name__=="__main__":
+
+@app.route("/register")
+def register():
+    return render_template("register.html")
+
+@app.route('/login_validation',method=['POST'])
+def login_validation():
+    email=request.form.get('email')
+    password=request.form.get('password')
+
+
+if __name__ == "__main__":
     app.run(debug=True)

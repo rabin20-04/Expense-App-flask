@@ -7,8 +7,11 @@ body {
   height: 100%;
   width: 100%;
 }
+.body-2{
+  background-color: #f0f7f3;
+}
 
-body {
+.body-1 {
   background: #159957; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
@@ -21,7 +24,18 @@ body {
     #159957
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-
+.bag-color{background: #4568DC;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #B06AB3, #4568DC);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #B06AB3, #4568DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+.Expense {
+  color: white;
+  /* transition: .1s ease; */
+}
+.Expense:hover {
+  color: rgb(67, 220, 231);
+  /* transition: .1s ease; */
+}
 .mid-text {
   margin-top: 60px;
   font-size: larger;
@@ -30,4 +44,14 @@ body {
 
 .card-items input {
   justify-items: center;
+}
+
+.nav-items-a a {
+  padding-bottom: 20px;
+  transform-origin: 0% 100%;
+  transition: 0.2s ease;
+  border-bottom: 2px solid rgba(255, 0, 0, 0);
+}
+.nav-items-a a:hover {
+  border-bottom: 1px solid red;
 }

@@ -14,29 +14,45 @@
       rel="stylesheet"
       href="{{url_for('static',filename='css/style.css')}}"
     />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='css/style.css')}}"
+    />
   </head>
-  <body>
+  <body class="body-1">
     <nav class="navbar nav-main">
-      <a href="" class="navbar-brand nav-brand text-light ps-4 ">Expense App</a>
+      <a href="" class="navbar-brand nav-brand ps-4 Expense">Expense App</a>
     </nav>
-    <div class="container ">
+    <div class="container">
       <div class="row">
         <div class="col-md-8 mid-text">
-          <h1 class="text-light display-4 pe-4 ">
-           Keep your day clear with the calculation of every Expenses
+          <h1 class="text-light display-4 pe-4">
+            Keep your day clear with the calculation of every Expenses
           </h1>
         </div>
-        <div class="col-md-4 mt-4 pt-5 ">
-          <div class="card ">
+        <div class="col-md-4 mt-4 pt-5">
+          <div class="card">
             <div class="card-body card-items">
-              <form class="form" action=""><label for="email">Email: </label>
-              <input class="form-control" type="email"><br>
-              <label for="password">Password: </label>
-              <input class="form-control" type="password" name="" id=""><br>
-              <button class="btn btn-primary w-100 py-2" type="submit">Login</button>
-              <div><label class="mt-2" for="">Doesn't have account? <a href="/register">Create account</a</label></div>
-            
-            </form>
+              <form class="form" method="post" action="/login_validation">
+                <label for="email">Email: </label>
+                <input class="form-control" type="email" name="email" /><br />
+                <label for="password">Password: </label>
+                <input
+                  class="form-control"
+                  type="password"
+                  name="password"
+                  id=""
+                /><br />
+                <button class="btn btn-primary w-100 py-2" type="submit">
+                  Login
+                </button>
+                <div>
+                  <label class="mt-2" for=""
+                    >Doesn't have account?
+                    <a href="/register">Create account</a></label
+                  >
+                </div>
+              </form>
             </div>
           </div>
         </div>
