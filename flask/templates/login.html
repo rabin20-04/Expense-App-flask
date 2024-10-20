@@ -33,9 +33,14 @@
         <div class="col-md-4 mt-4 pt-5">
           <div class="card">
             <div class="card-body card-items">
-              <form class="form" method="post"  action="/login_validation">
+              <form class="form" method="post" action="/login_validation">
                 <label for="email">Email: </label>
-                <input class="form-control" type="email" name="email" /><br />
+                <input
+                  class="form-control"
+                  type="email"
+                  name="email "
+                  required
+                /><br />
                 <label for="password">Password: </label>
                 <input
                   class="form-control"
@@ -48,7 +53,7 @@
                 </button>
                 <div>
                   <label class="mt-2" for=""
-                    >New to Expense?
+                    >New to Expense App?
                     <a href="/register">Create account</a></label
                   >
                 </div>
