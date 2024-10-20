@@ -8,11 +8,14 @@ app = Flask(__name__)
 
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///user_info.db"
 db = SQLAlchemy(app)
-conn=mysql.connector.connect(host="sql.freedb.tech",username="freedb_user_101",password="7aGdxGx*qP&Ymd7",database="freedb_127.0.0.1")
-
+conn = mysql.connector.connect(
+    host="sql.freedb.tech",
+    user="freedb_user_101",
+    password="7aGdxGx*qP&Ymd7",
+    database="freedb_127.0.0.1",
+)
 date_created = db.Column(db.DateTime, default=datetime.now(timezone.utc))
-
-
+cursor = conn.cursor()
 
 
 @app.route("/home")
@@ -34,9 +37,15 @@ def register():
 def login_validation():
     email = request.form.get("email")
     password = request.form.get("password")
-    return "the email {} and password is{}".format(email, password)
+    cursor.execute(
+        """SELECT * FROM `users` WHERE `email` = %s AND `password` = %s""",
+        (email, password),
+    )
+    users = cursor.fetchall()
+    return users
 
 
 if __name__ == "__main__":
- 
-    app.run(debug=True)
+    app.run(debug=True, port=8002)
+    print("hello")
+print("hello")
