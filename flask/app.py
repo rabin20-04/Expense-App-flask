@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
-from flask_sqlalchemy import SQLAlchemy 
-from datetime import datetime,timezone
+from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime, timezone
 
 
 app = Flask(__name__)
@@ -10,15 +10,13 @@ db = SQLAlchemy(app)
 
 
 class Expense_app(db.Model):
-    sno=db.Column(db.Integer,primary_key=True)
-    name=db.Column(db.String(200),nullable=False)
-    Expense=db.Column(db.String(500),nullable=False)
+    sno = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(200), nullable=False)
+    Expense = db.Column(db.String(500), nullable=False)
     date_created = db.Column(db.DateTime, default=datetime.now(timezone.utc))
 
     def __repr__(self):
         return f"{self.name}-{self.Expense}-{self.date_created}"
-    
-
 
 
 @app.route("/home")
