@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///user_info.db"
 db = SQLAlchemy(app)
-conn=mysql.connector.connect()
+conn=mysql.connector.connect(host="sql.freedb.tech",username="freedb_user_101",password="7aGdxGx*qP&Ymd7",database="freedb_127.0.0.1")
 
 date_created = db.Column(db.DateTime, default=datetime.now(timezone.utc))
 
