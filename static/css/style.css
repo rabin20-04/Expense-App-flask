@@ -7,7 +7,7 @@ body {
   height: 100%;
   width: 100%;
 }
-.body-2{
+.body-2 {
   background-color: #f0f7f3;
 }
 
@@ -24,10 +24,19 @@ body {
     #159957
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-.bag-color{background: #4568DC;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #B06AB3, #4568DC);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #B06AB3, #4568DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  }
+.bag-color {
+  background: #4568dc; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #b06ab3,
+    #4568dc
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #b06ab3,
+    #4568dc
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
 .Expense {
   color: white;
   /* transition: .1s ease; */
@@ -53,5 +62,5 @@ body {
   border-bottom: 2px solid rgba(255, 0, 0, 0);
 }
 .nav-items-a a:hover {
-  border-bottom: 1px solid red;
+  border-bottom: 2px solid red;
 }
