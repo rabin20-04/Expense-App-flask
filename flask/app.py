@@ -1,22 +1,18 @@
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime, timezone
+import mysql.connector
 
 
 app = Flask(__name__)
 
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///./user_info.db"
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///user_info.db"
 db = SQLAlchemy(app)
+conn=mysql.connector.connect()
+
+date_created = db.Column(db.DateTime, default=datetime.now(timezone.utc))
 
 
-class Expense_app(db.Model):
-    sno = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(200), nullable=False)
-    Expense = db.Column(db.String(500), nullable=False)
-    date_created = db.Column(db.DateTime, default=datetime.now(timezone.utc))
-
-    def __repr__(self):
-        return f"{self.name}-{self.Expense}-{self.date_created}"
 
 
 @app.route("/home")
@@ -42,4 +38,5 @@ def login_validation():
 
 
 if __name__ == "__main__":
+ 
     app.run(debug=True)
