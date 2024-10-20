@@ -1,6 +1,10 @@
-from flask import Flask, render_template,request
+from flask import Flask, render_template, request
+import mysql.connector
 
 app = Flask(__name__)
+
+
+connector = mysql.connector.connect()
 
 
 @app.route("/home")
@@ -17,10 +21,12 @@ def login():
 def register():
     return render_template("register.html")
 
-@app.route('/login_validation',method=['POST'])
+
+@app.route("/login_validation", methods=["POST"])
 def login_validation():
-    email=request.form.get('email')
-    password=request.form.get('password')
+    email = request.form.get("email")
+    password = request.form.get("password")
+    return "the email {} and password is{}".format(email, password)
 
 
 if __name__ == "__main__":
