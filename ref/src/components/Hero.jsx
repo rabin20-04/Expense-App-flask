@@ -53,6 +53,7 @@ const Hero = () => {
               >
                 Rabin Poudel
               </motion.h2>
+              <span className="text-xs px-2 text-stone-600">Exploring </span>
               <span className="px-2">
                 <TypeAnimation
                   sequence={[
